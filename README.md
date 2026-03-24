@@ -70,8 +70,6 @@ Features of the API:
 ## 📁 Project Structure
 
 ```
-Project Structure
-
 Pixel Ledger/
 │
 ├── index.html
