@@ -1,8 +1,3 @@
-# 🔒 Environment variables (IMPORTANT for API keys)
-.env
-.env.local
-.env.*.local
-
 # 📦 Node modules (if you use Tailwind CLI later)
 node_modules/
 
