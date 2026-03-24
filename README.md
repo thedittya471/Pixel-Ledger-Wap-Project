@@ -67,16 +67,24 @@ Features of the API:
 * RAWG API
 
 ---
+## 📁 Project Structure
 
-📁 Project Structure
-kinetic-archive/
-│── index.html
-│── game.html
-│── categories.html
+```
+Project Structure
+
+Pixel Ledger/
+│
+├── index.html
+├── game.html
+├── categories.html
 │
 ├── styles/
 ├── scripts/
 ├── assets/
+│
+├── .gitignore
+├── README.md
+```
 
 ---
 
