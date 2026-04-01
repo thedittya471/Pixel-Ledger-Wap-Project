@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories — Kinetic Archive</title>
+    <link rel="stylesheet" href="../styles/categories.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand">KINETIC_ARCHIVE</a>
+        <nav class="nav-main">
+            <a href="index.html">Games</a>
+            <a href="categories.html" class="is-active">Categories</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="header-tools">
+            <button type="button" class="icon-btn" aria-label="Search">&#128269;</button>
+            <button type="button" class="icon-btn icon-btn--user" aria-label="Profile">&#128100;</button>
+        </div>
+    </header>
+
+    <div class="page-inner">
+
+        <section class="game-grid" id="game-grid" aria-label="Games" aria-live="polite">
+            <p class="game-grid__state game-grid__loading">Loading archive…</p>
+        </section>
+
+        <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+    </div>
+
+    <footer class="site-footer">
+        <a href="index.html" class="footer-brand">KINETIC_ARCHIVE</a>
+        <nav class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">API</a>
+            <a href="#">Discord</a>
+            <a href="#">GitHub</a>
+        </nav>
+        <p class="footer-copy">&copy; 2024 Kinetic Archive. Engineered for play.</p>
+    </footer>
+    <script src="../scripts/categories.js" defer></script>
+</body>
+
+</html>
