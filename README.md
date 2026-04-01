@@ -91,13 +91,13 @@ Pixel Ledger/
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/kinetic-archive.git
+git clone https://github.com/thedittya471/Pixel-Ledger-Wap-Project.git
 ```
 
 2. Navigate to the project folder:
 
 ```
-cd kinetic-archive
+cd Pixel-Ledger-Wap-Project
 ```
 
 3. Open `index.html` in your browser
