@@ -4,14 +4,23 @@ const BASE_URL = "https://api.rawg.io/api/games";
 let currentPage = 1;
 const gamesPerPage = 8;
 let totalPages = 1;
+let currentGenre = "";
 
 async function fetchGames() {
     const grid = document.getElementById("game-grid");
     const pagination = document.getElementById("pagination");
 
+    // Show loading state
+    grid.innerHTML = '<p class="game-grid__state game-grid__loading">Searching the archives...</p>';
+    pagination.innerHTML = '';
+
     try {
         // Build the URL link to request data
-        const url = `${BASE_URL}?key=${API_KEY}&page=${currentPage}&page_size=${gamesPerPage}`;
+        let url = `${BASE_URL}?key=${API_KEY}&page=${currentPage}&page_size=${gamesPerPage}`;
+        
+        if (currentGenre) {
+            url += `&genres=${currentGenre}`;
+        }
         
         // Ask the API for data and wait for the response
         const response = await fetch(url);
@@ -107,8 +116,51 @@ function changePage(newPage) {
     if (newPage >= 1 && newPage <= totalPages) {
         currentPage = newPage;   // update the current page variable
         fetchGames();            // fetch the games again for the newly chosen page
+        
+        // Scroll back to top for better UX
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 }
+
+// Function to change the category
+function changeCategory(genre) {
+    currentGenre = genre;
+    currentPage = 1; // Reset to page 1 when category changes
+    
+    // Update active button state
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        if (btn.getAttribute('data-genre') === genre) {
+            btn.classList.add('is-active');
+        } else {
+            btn.classList.remove('is-active');
+        }
+    });
+    
+    fetchGames();
+
+    // Scroll back to top of the grid for better UX
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Add event listeners to filter buttons
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBar = document.getElementById('category-filters');
+    if (filterBar) {
+        filterBar.addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                const genre = e.target.getAttribute('data-genre');
+                changeCategory(genre);
+            }
+        });
+    }
+});
 
 // 7. Start the entire process immediately when the JavaScript file loads
 fetchGames();

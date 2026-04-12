@@ -103,6 +103,41 @@ body {
   min-height: 120px;
 }
 
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: fit-content;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #9ca3af;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn.is-active {
+  background: var(--accent-strong);
+  color: #000;
+  box-shadow: 0 0 20px rgba(120, 255, 217, 0.25);
+}
+
 .game-grid__state {
   grid-column: 1 / -1;
   text-align: center;
